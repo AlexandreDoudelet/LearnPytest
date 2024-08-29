@@ -36,6 +36,6 @@ class Testamazon():
         print (results)
         # assert any(search_item in result.text for result in results)
 
-    @pytest.mark.xfail
-    def test_calculation():
-        assert 2+2 == 5 
+    # @pytest.mark.xfail
+    # def test_calculation():
+    #     assert 2+2 == 5 
