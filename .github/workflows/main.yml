@@ -4,7 +4,7 @@ name: Run BrowserStack Tests
 on:
   push:
     branches:
-      - main  # Change to your default branch if different
+      - master  # Change to your default branch if different
 
 jobs:
   test:
