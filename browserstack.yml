@@ -1,5 +1,5 @@
-userName: alexdoudelet_0mSswT
-accessKey: hxxiZsydoypyW8S9RFNT
+userName: $BROWSERSTACK_USERNAME
+accessKey: $BROWSERSTACK_ACCESS_KEY
 platforms:
   - os: Windows
     osVersion: 10
