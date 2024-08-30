@@ -7,7 +7,7 @@ from configfiles.conftest import browser
 
 @pytest.mark.usefixtures("browser")
 class TestSkanetrafiken():
-    #@pytest.mark.sanity
+    @pytest.mark.sanity
     def test_skanetrafiken_mainpage_search(self):
         self.browser.delete_all_cookies()
         self.browser.get("https://www.skanetrafiken.se")
@@ -31,6 +31,8 @@ class TestSkanetrafiken():
         results = self.browser.find_elements(By.CSS_SELECTOR, '#search > div.s-desktop-width-max.s-desktop-content.s-opposite-dir.s-wide-grid-style.sg-row > div.sg-col-20-of-24.s-matching-dir.sg-col-16-of-20.sg-col.sg-col-8-of-12.sg-col-12-of-16 > div > span.rush-component.s-latency-cf-section > div.s-main-slot.s-result-list.s-search-results.sg-row > div:nth-child(6)')
         print (results)
         # assert any(search_item in result.text for result in results)
+
+    @pytest.mark.sanity    
     @pytest.mark.parametrize("cityfrom, cityto",[("malmö","Helsingborg C"), ("Lund","Båstad")])
     def test_skanetrafiken_sokpage_search(self, cityfrom, cityto):
         self.browser.delete_all_cookies()
