@@ -7,7 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture(scope="class")
 def browser(request):
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))# You can specify the path to your chromedriver if needed
+    #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))# You can specify the path to your chromedriver if needed
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager(version="114.0.5735.90").install()))
     driver.implicitly_wait(10)  # Wait up to 10 seconds for elements to appear
     # Simulate human-like delays
     #time.sleep(1.3)  # wait for 2 seconds
