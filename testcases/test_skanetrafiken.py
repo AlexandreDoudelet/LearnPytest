@@ -63,31 +63,51 @@ class TestSkanetrafiken():
             #dd_destination = Select(list_to)   
             #dd_destination.select_by_visible_text(' Båstad station')    
             time.sleep(4)
+        elif cityto == "Helsingborg C":
+            list_to = self.browser.find_elements(By.CSS_SELECTOR, "*[id='toDestinationAutocompleteListbox'] li") 
+            print(len(list_to))
+            for value in list_to:
+                    if "Helsingborg C" in value.text:
+                        value.click()
+                        break
+            #dd_destination = Select(list_to)   
+            #dd_destination.select_by_visible_text(' Båstad station')    
+            time.sleep(4)
         else:
             search_boxto.send_keys(Keys.ENTER)
 
-        departureradio = self.browser.find_element(By.ID, 'departure')
+        departureradio = self.browser.find_element(By.CSS_SELECTOR, "*[id='departure']")
         departureradio.click()
         departureradio.is_selected()
 
         # calendar = self.browser.find_element(By.XPATH, "//button[@class='duet-date__toggle']")
         # calendar.click()
         # self.browser.find_element(By.XPATH, "//*[contains(text(),'27 juli')]").click()
-        list_date= self.browser.find_elements(By.XPATH, "//table[@class='duet-date__table']//tbody//td//button")
-        print (f"{list_date}")
-        print(len(list_date))
-        for value in list_date:
-            if "27" in value.txt:
-                value.click()
-                break
-        time.sleep(2)
 
-        hoursLabeldropdown = self.browser.find_element(By.CSS_SELECTOR, "*[aria-labelledby='hoursLabel']")
-        #hoursLabeldropdown.scroll_to_element(hoursLabeldropdown)
-        dd = Select(hoursLabeldropdown)
-        dd.select_by_visible_text('11')
+        # list_date= self.browser.find_elements(By.CSS_SELECTOR, "*[class='duet-date__input']")
+        # list_date.send_keys('2024-09-05')
+        # list_date.send_keys(Keys.ENTER)
+        # time.sleep(4)
+        
+        SearchButton = self.browser.find_element(By.ID, 'searchButton')
+        SearchButton.click()
+        
 
-        time.sleep(2)
+        # list_date= self.browser.find_elements(By.CSS_SELECTOR, "*[class='duet-date__toggle']")
+        # print (f"{list_date}")
+        # print(len(list_date))
+        # for value in list_date:
+        #     if "27" in value.txt:
+        #         value.click()
+        #         break
+        # time.sleep(2)
+
+        # hoursLabeldropdown = self.browser.find_element(By.CSS_SELECTOR, "*[aria-labelledby='hoursLabel']")
+        # #hoursLabeldropdown.scroll_to_element(hoursLabeldropdown)
+        # dd = Select(hoursLabeldropdown)
+        # dd.select_by_visible_text('11')
+
+        # time.sleep(2)
 
         # Submit the search form
         #search_boxto.send_keys(Keys.RETURN)
