@@ -57,7 +57,7 @@ class TestSkanetrafiken():
             list_to = self.browser.find_elements(By.CSS_SELECTOR, "*[id='toDestinationAutocompleteListbox'] li") 
             print(len(list_to))
             for value in list_to:
-                    if "Båstad station" in value.text:
+                    if " Båstad station" in value.text:
                         value.click()
                         break
             #dd_destination = Select(list_to)   
@@ -67,7 +67,7 @@ class TestSkanetrafiken():
             list_to = self.browser.find_elements(By.CSS_SELECTOR, "*[id='toDestinationAutocompleteListbox'] li") 
             print(len(list_to))
             for value in list_to:
-                    if "Helsingborg C" in value.text:
+                    if " Helsingborg C" in value.text:
                         value.click()
                         break
             #dd_destination = Select(list_to)   

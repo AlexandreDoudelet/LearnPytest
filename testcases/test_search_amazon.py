@@ -10,7 +10,7 @@ class Testamazon():
     @pytest.mark.parametrize("search_item",["selenium","playright","cypress","boat"])
     def test_amazon_search(self, search_item):
 
-
+        #self.browser.delete_all_cookies()
         # Open the Amazon homepage
         self.browser.get('https://www.amazon.com')
         #self.browser.refresh()
